@@ -1,7 +1,22 @@
 package com.dj_song_request_service.djezquest.song;
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
+@Entity
+@Table
+
 public class Song {
+    @Id
+    @SequenceGenerator(
+            name = "song_sequence",
+            sequenceName = "song_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "song_sequence"
+    )
     private Long id;
     private String title;
     private String artist;
