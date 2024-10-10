@@ -1,9 +1,7 @@
 package com.dj_song_request_service.djezquest.song;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,5 +22,8 @@ public class SongController {
         return songService.getSongs();
     }
 
-    
+    @PostMapping
+    public void registerSong(Song song) {
+        songService.addNewSong(song);
+    }
 }
