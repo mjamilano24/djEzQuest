@@ -1,7 +1,9 @@
 package com.dj_song_request_service.djezquest.song;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+
 
 @Entity
 @Table
@@ -17,28 +19,31 @@ public class Song {
             strategy = GenerationType.SEQUENCE,
             generator = "song_sequence"
     )
+
     private Long id;
     private String title;
     private String artist;
     private String guestEmail;
     private LocalDateTime requestTimestamp;
 
+
     public Song() {
     }
 
-    public Song(Long id, String title, String artist, String guestEmail, LocalDateTime requestTimestamp) {
+
+    public Song(Long id, String title, String artist, String guestEmail) {
         this.id = id;
         this.title = title;
         this.guestEmail = guestEmail;
         this.artist = artist;
-        this.requestTimestamp = requestTimestamp;
+        this.requestTimestamp = LocalDateTime.now();
     }
 
-    public Song(String title, String artist, String guestEmail, LocalDateTime requestTimestamp) {
+    public Song(String title, String artist, String guestEmail) {
         this.title = title;
         this.artist = artist;
         this.guestEmail = guestEmail;
-        this.requestTimestamp = requestTimestamp;
+        this.requestTimestamp = LocalDateTime.now();
     }
 
     public Long getId() {
