@@ -20,4 +20,9 @@ public class SongService {
     public List<Song> getSongs(){
         return songRepository.findAll();
     }
+
+    public void addNewSong(Song song) {
+        songRepository.save(song);
+    }
+
 }

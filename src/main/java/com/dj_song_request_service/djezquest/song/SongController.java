@@ -23,7 +23,9 @@ public class SongController {
     }
 
     @PostMapping
-    public void registerSong(Song song) {
+    public void registerSong(@RequestBody Song song) {
+        song.setRequestTimestamp(LocalDateTime.now());
         songService.addNewSong(song);
     }
+
 }
