@@ -1,12 +1,12 @@
 import React from 'react';
 import '../../App.css';
-
+import DashSection from '../DashSection';
 import Footer from '../Footer';
 
 function DashBoard() {
   return (
     <>
-      <h1>Dashboard</h1>
+      <DashSection />
 
       <Footer />
 
