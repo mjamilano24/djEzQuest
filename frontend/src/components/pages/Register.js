@@ -1,12 +1,12 @@
 import React from 'react';
 import '../../App.css';
-
+import RegisterSection from '../RegisterSection';
 import Footer from '../Footer';
 
-function DashBoard() {
+function Register() {
   return (
     <>
-      <h1>Dashboard</h1>
+      <RegisterSection />
 
       <Footer />
 
@@ -14,4 +14,4 @@ function DashBoard() {
   );
 }
 
-export default DashBoard;
+export default Register;
