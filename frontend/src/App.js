@@ -1,6 +1,9 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from './components/pages/Home';
+import Login from './components/pages/Login';
+import Register from './components/pages/Register';
+import DashBoard from "./components/pages/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -11,6 +14,9 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/dashboard" element={<DashBoard />} />
                 </Routes>
             </Router>
         </>
